@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html>
 <html lang = "en">
 <head> 
@@ -25,3 +26,77 @@
 
 </body>
 </html>
+-->
+ <!DOCTYPE html>
+ <html lang= "en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name = "viewport" content="width = device-width, initial-scale = 1.0">
+        <link rel="stylesheet" href =  "style.css">
+        <title> portfolio main</title>
+    </head>
+    <body>
+        <section class="showcase">
+            <header>
+                <h2 class = "logo"> Portfolio</h2>
+                <div class="toggle"></div>
+            </header>
+
+            <video id="backgroundVideo" src="loop.mp4" muted loop autoplay></video>
+            <div class = "overlay"></div>
+            <div class="text">
+                <h2 id= "Zobry">Resume</h2>
+                <h3 id= "home"> Home</h3>
+                <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae error vel natus sapiente nisi suscipit explicabo architecto enim, dolorem cum, quo voluptas quasi molestias, dolore nesciunt illo eos dicta doloribus?</p>
+                
+            </div>
+
+            <ul class = "social"> 
+                <li><img src = "fb.png" alt=""></li>
+            </ul>
+
+            
+        </section>
+
+        <div class = "menu">
+            <ul>
+                <li> <a href="#"> Home</a> </li>
+            </ul>
+        </div>
+
+        <script>
+            document.getElementById("Zobry").addEventListener("click", function(event) {
+                event.preventDefault(); // Prevent default link behavior
+        
+                var video = document.getElementById("backgroundVideo");
+        
+                // Change video source
+                video.src = "In.mp4"; // Replace with your new video file
+                video.removeAttribute("loop"); // Ensure it does not loop
+                video.load(); // Reload video to apply the change
+                video.play(); // Play the new video
+                video.onended = null;
+            });
+        
+            document.getElementById("home").addEventListener("click", function(event) {
+                event.preventDefault(); // Prevent default link behavior
+        
+                var video = document.getElementById("backgroundVideo");
+        
+                // Change video source
+                video.src = "Out.mp4"; // Replace with your new video file
+                video.removeAttribute("loop"); // Ensure it does not loop
+                video.load(); // Reload video to apply the change
+                video.play(); // Play the new video
+        
+                // Listen for when "Out.mp4" finishes playing
+                video.onended = function() {
+                    video.src = "loop.mp4"; // Switch back to loop.mp4
+                    video.setAttribute("loop", ""); // Ensure looping is re-enabled
+                    video.load();
+                    video.play();
+                };
+            });
+        </script>
+    </body>
+ </html>
