@@ -42,11 +42,13 @@
                 <div class="toggle"></div>
             </header>
 
-            <video id="backgroundVideo" src="loop.mp4" muted loop autoplay></video>
+            <video id="backgroundVideo" src="loopN.mp4" muted loop autoplay></video>
             <div class = "overlay"></div>
             <div class="text">
                 <h2 id= "Zobry">Resume</h2>
                 <h3 id= "home"> Home</h3>
+                <h4 id="Research"> Research</h4>
+                <h5 id="Readings"> Readings</h5>
                 <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae error vel natus sapiente nisi suscipit explicabo architecto enim, dolorem cum, quo voluptas quasi molestias, dolore nesciunt illo eos dicta doloribus?</p>
                 
             </div>
@@ -71,7 +73,7 @@
                 var video = document.getElementById("backgroundVideo");
         
                 // Change video source
-                video.src = "In.mp4"; // Replace with your new video file
+                video.src = "InN.mp4"; // Replace with your new video file
                 video.removeAttribute("loop"); // Ensure it does not loop
                 video.load(); // Reload video to apply the change
                 video.play(); // Play the new video
@@ -84,14 +86,14 @@
                 var video = document.getElementById("backgroundVideo");
         
                 // Change video source
-                video.src = "Out.mp4"; // Replace with your new video file
+                video.src = "OutN.mp4"; // Replace with your new video file
                 video.removeAttribute("loop"); // Ensure it does not loop
                 video.load(); // Reload video to apply the change
                 video.play(); // Play the new video
         
                 // Listen for when "Out.mp4" finishes playing
                 video.onended = function() {
-                    video.src = "loop.mp4"; // Switch back to loop.mp4
+                    video.src = "loopN.mp4"; // Switch back to loop.mp4
                     video.setAttribute("loop", ""); // Ensure looping is re-enabled
                     video.load();
                     video.play();
