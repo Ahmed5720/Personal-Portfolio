@@ -149,9 +149,11 @@ header .logo
   left: 0;
   width: 100%;
   height: 100%;
-  background: #ffffff00;
-  mix-blend-mode: overlay;
+  background: #ff101000;
+  
+  transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
 }
+
 .text
 {
   position: relative;
@@ -196,6 +198,20 @@ header .logo
   transition: 0.2s;
 }
 .text h5:hover
+{
+    color: #b96e12;
+}
+
+.text h6
+{
+  font-size: 5em;
+  font-weight: 300;
+  color: #ffffff;
+  line-height: 1.3em;
+  text-transform: lowercase;
+  transition: 0.2s;
+}
+.text h6:hover
 {
     color: #b96e12;
 }
@@ -309,4 +325,75 @@ header .logo
   {
     font-size: 3em;
   }
+}
+
+
+
+.projects-overlay {
+  position: fixed;
+  top: 0;
+  
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(47, 161, 255, 0.098); /* Dark transparent background */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Align the content to the left */
+  color: rgb(255, 255, 255);
+  z-index: 1000;
+  padding-left: 0px; /* Optional: to provide some space from the left edge */
+  padding-top:580px;
+}
+
+.projects-container {
+    display: flex;
+    flex-direction: row;
+    gap: 0px;
+    align-items: flex-start;
+    margin-left: 0px;
+    margin-top: 10;
+
+}
+
+.project-card {
+    background: #22222200;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(72, 0, 0, 0);
+}
+
+.project-card img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: border 0.3s ease-in-out, transform 0.2s;
+  
+}
+
+.project-card img:hover {
+  border: 4px solid rgb(255, 149, 0); /* Change this color as you like */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+
+.close-overlay {
+    cursor: pointer;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0);
+    padding-bottom: 100px;
+    padding-left: 800px;
+    border-radius: 5px;
+    position: absolute; /* Use absolute positioning */
+    top: 500px; /* Adjust top value to move it upwards */
+    right: 830px; /* Move the icon to the right */
+    z-index: 1001; /* Make sure it's on top of other elements */
+}
+.close-overlay img {
+  width: 30px; /* Adjust the size of the icon */
+  height: 30px; /* Adjust the size of the icon */
+  opacity: 1; /* Make sure it's fully visible */
+  background-color: transparent; /* Ensure background is transparent */
 }
