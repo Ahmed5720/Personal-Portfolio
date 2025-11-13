@@ -1,153 +1,79 @@
-
 <!DOCTYPE html>
-<html lang= "en">
-   
-   <head>
-       <meta charset="UTF-8">
-       <meta name = "viewport" content="width = device-width, initial-scale = 1.0">
-       <link rel="stylesheet" href =  "style.css">
-       <title> portfolio main</title>
-   </head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Portfolio - Home</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="logo">There's nothing here (yet)</div>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="https://www.artstation.com/ahmedyassin572">ArtStation</a></li>
+      </ul>
+    </nav>
+  </header>
 
-   <body>
+  <!-- Large image / hero section -->
+  <section class="hero">
+  <img
+    src="/lac.jpg"
+    alt="Hero image"
+    class="hero-bg"
+  />
+  <div class="hero-text">
+    <!--<img src="moi.jpg" alt="Profile picture" class="profile-pic">-->
+    <h1>Hi, I’m Ahmed</h1>
+    <p>I make things</p>
+  </div>
+</section>
+  
 
-       <!-- Projects Overlay -->
-       <div id="projectsOverlay" class="projects-overlay" style="display: none;">
-           <h2> </h2>
-           <div class="projects-container">
-               <div class="project-card">
-                   <a href="https://github.com/Ahmed5720/Simple-Ray-Tracer" target="_blank"> <img src="images\rtpetershirly.jpg" alt="Ray Tracer"> </a>
-                   <h3>Ray Tracer</h3>
-                   <p>Monte Carlo Ray Tracer.</p>
-               </div>
-
-               <div class="project-card">
-                <a href="https://github.com/Ahmed5720/Simple-Ray-Tracer" target="_blank"> <img src="images\rtpetershirly.jpg" alt="Ray Tracer"> </a>
-                <h3>Ray Tracer</h3>
-                <p>Monte Carlo Ray Tracer.</p>
-               </div>
-
-               <div class="project-card">
-                <a href="https://github.com/Ahmed5720/Simple-Ray-Tracer" target="_blank"> <img src="images\rtpetershirly.jpg" alt="Ray Tracer"> </a>
-                <h3>Ray Tracer</h3>
-                <p>Monte Carlo Ray Tracer.</p>
-               </div>
-
-               
-
-               
-           </div>
-           <div class="close-overlay" onclick="closeOverlay()">
-            <img src="images/close-icon.png" alt="Close" /> 
+     <section class="links-section">
+      <h2>a few older things i have made which I now disown</h2>
+      <div class="links-grid">
+        <div class="link-card">
+        
+          <a href="https://ahmednassar929232879.wordpress.com/" target="_blank">A website from highschool with a bunch of unity work, a few writings, and art projects</a>
         </div>
-       </div>
+        
+        <div class="link-card"> 
+     
+          <a href="https://sites.google.com/view/ahmed-mahmoud/recent-projects?authuser=0" target="_blank">even more older and unstructured work</a>
+        </div>
+        
+        
+      </div>
+      </section>
 
+
+
+  <main>
+    <section class="content">
+      <h2>Welcome</h2>
+      <p>
+        right now my interests are in Graphics API's, GPUs, and designing efficient systems.
+        from time to time, I tinker with other stuff. 
+      </p>
        
-       <section class="showcase">
-        <header>
-            <h2 class="logo">Ahmed Yassin</h2>
-            <!--<div class="toggle"></div>-->
-            <a href="https://github.com/Ahmed5720" target="_blank">
-                <img src="github.png" alt="GitHub">
-            </a>
-        </header>
+    </section>
+  </main>
 
-           <video id="backgroundVideo" src="loopN.mp4" muted loop autoplay></video>
-           <div class = "overlay"></div>
-           <div class="text">
-               <h2 id= "projects">Projects</h2>
-               <h3 id= "artstation"> ArtStation</h3>
-               <h4 id="Research"> Research</h4>
-               <h5 id="Blog"> Blog</h5>
-               <h6 id="Home"> Home</h6>
-               <p> Hi there, I am Ahmed. I love things that are creative and thats why I love Computer Science, and research, and the arts.  </p>
-               
-           </div>
-       
-
-           
-
-           
-       </section>
-
-       <div class = "menu">
-           <ul>
-               <li> <a href="#"> Home</a> </li>
-           </ul>
-       </div>
-
-       <script>
-           document.getElementById("projects").addEventListener("click", function(event) {
-               event.preventDefault(); // Prevent default link behavior
-       
-               var video = document.getElementById("backgroundVideo");
-               
-               
-               
-
-               
-
-
-                
-               // Change video source
-               video.src = "InN.mp4"; // Replace with your new video file
-               video.removeAttribute("loop"); // Ensure it does not loop
-               video.load(); // Reload video to apply the change
-               video.play(); // Play the new video
-               video.onended = function() {
-               //document.getElementsByClassName("Overlay").style.display = "none";
-               document.getElementById("projectsOverlay").style.display = "flex";
-               document.querySelector(".text").style.display = "none";
-               
-           };
-           });
-       
-           document.getElementById("Home").addEventListener("click", function(event) {
-               event.preventDefault(); // Prevent default link behavior
-       
-               var video = document.getElementById("backgroundVideo");
-               
-               // Change video source
-               video.src = "OutN.mp4"; // Replace with your new video file
-               video.removeAttribute("loop"); // Ensure it does not loop
-               video.load(); // Reload video to apply the change
-               video.play(); // Play the new video
-       
-               // Listen for when "Out.mp4" finishes playing
-               video.onended = function() {
-                   video.src = "loopN.mp4"; // Switch back to loop.mp4
-                   video.setAttribute("loop", ""); // Ensure looping is re-enabled
-                   video.load();
-                   video.play();
-               };
-           });
-
-           document.getElementById("artstation").addEventListener("click", function(event) {
-               event.preventDefault(); // Prevent default behavior
-               window.location.href = "https://www.artstation.com/alien572"; // Replace with your actual ArtStation profile link
-           });
-
-           function closeOverlay() {
-            document.getElementById("projectsOverlay").style.display = "none";
-            document.querySelector(".text").style.display = "block";
-            event.preventDefault(); // Prevent default link behavior
-       
-               var video = document.getElementById("backgroundVideo");
-               
-               // Change video source
-               video.src = "OutN.mp4"; // Replace with your new video file
-               video.removeAttribute("loop"); // Ensure it does not loop
-               video.load(); // Reload video to apply the change
-               video.play(); // Play the new video
-       
-               // Listen for when "Out.mp4" finishes playing
-               video.onended = function() {
-                   video.src = "loopN.mp4"; // Switch back to loop.mp4
-                   video.setAttribute("loop", ""); // Ensure looping is re-enabled
-                   video.load();
-                   video.play();
-               };
-        }
-       </script>
-   </body>
+  <footer>
+    <p>&copy; 2025 Ahmed Yassin</p>
+    <a
+      href="https://github.com/Ahmed5720"
+      class="github-icon"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="GitHub"
+    >
+      GH
+    </a>
+  </footer>
+</body>
 </html>
